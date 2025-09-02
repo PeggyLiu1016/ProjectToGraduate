@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Windows
+desktop.ini
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc

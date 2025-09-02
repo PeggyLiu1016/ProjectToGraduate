@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詐騙模擬器</title>
+    <!-- 載入 CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 載入字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <audio id="bg-music" loop>
+        <source src="audio/main.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音訊元素。
+
+    </audio>
+    <div id="app">
+        <!-- Section 1: 封面頁 -->
+        <section id="cover-page" class="page">
+            <div class="wrapper">
+                <div class="text-group">
+                  <img src="UI設計/CoverO/Word1.PNG" alt="True" class="True">
+                  <img src="UI設計/CoverO/Word2.PNG" alt="or" class="or">
+                </div>
+                  <img src="UI設計/CoverO/Word3.PNG" alt="Fauxship" class="Fauxship">
+                  <img src="頭貼/ps5.png" alt="pic" class="left_pic">
+                <a href="#" id="enter-btn-link">
+                    <img src="UI設計/CoverO/1.png" alt="進入鍵" id="cover-next-btn" class="enter-btn">
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 2: 註冊頁 -->
+        <section id="enroll-page" class="page">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="avatar-container">
+                        <div class="avatar-circle"></div>
+                        <img src="UI設計/EnrollO/頭貼2.png" alt="頭像" class="avatar-img" />
+                    </div>
+                    <div class="register-wrapper">
+                        <h1 class="enroll">註冊</h1>
+                        <div class="form-area">
+                            <div class="input-group">
+                                <label for="name">• 姓名</label>
+                                <input type="text" id="name" placeholder="請輸入姓名">
+                            </div>
+                            <div>
+                                <label>• 詐騙方式</label>
+                                <div class="option-group" id="scam-method-options">
+                                    <button class="option-btn">假投資</button>
+                                    <button class="option-btn">假網購</button>
+                                    <button class="option-btn">假中獎</button>
+                                    <button class="option-btn">詐取帳戶</button>
+                                    <button class="option-btn">貸款詐騙</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label>• 個性化</label>
+                                <div class="option-group" id="personalization-options">
+                                    <button class="option-btn">搞笑</button>
+                                    <button class="option-btn">文青</button>
+                                    <button class="option-btn">可愛</button>
+                                    <button class="option-btn">穩重</button>
+                                    <button class="option-btn">溫和</button>
+                                    <button class="option-btn">好奇</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="UI設計/EnrollO/未命名-9.png" id="enroll-next-btn" class="next-page-button-link" alt="下一頁">
+            </div>
+        </section>
+
+        <!-- Section 3: 角色選擇頁 -->
+        <section id="character-select-page" class="page">
+            <div class="character-select-container">
+
+                <img id="character-dynamic-image" class="character-dynamic-image" src="" alt="角色對應圖片">
+                
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="card" data-character-name="阿明" style="background:#d1a089"><img src="UI設計/角色選擇/角色2.png" alt="阿明"></div>
+                        <div class="card" data-character-name="獅頭" style="background:#e6bb93"><img src="UI設計/角色選擇/角色3.png" alt="獅頭"></div>
+                        <div class="card" data-character-name="土集" style="background:#e9b983"><img src="UI設計/角色選擇/角色5.png" alt="土集"></div>
+                        <div class="card" data-character-name="企頁佳" style="background:#b5c6df"><img src="UI設計/角色選擇/角色4.png" alt="企頁佳"></div>
+                    </div>
+                </div>
+                <div class="info-box" id="infoBox"></div>
+                <button id="confirm-character-btn" class="confirm-button">確認選擇</button>
+            </div>
+        </section>
+
+        <!-- Section 4: 互動動畫序列 -->
+        <section id="interactive-sequence-page" class="page">
+            <div class="sequence-container">
+                <video id="sequence-video-1" class="sequence-element" muted playsinline>
+                    <source src="ED/OP.mp4" type="video/mp4">
+                </video>
+                <img src="UI設計/需點擊.gif" id="clickable-gif" class="sequence-element">
+                <video id="sequence-video-2" class="sequence-element" muted playsinline>
+                    <source src="ED/過場.mp4" type="video/mp4">
+                </video>
+                <img src="" id="final-png" class="sequence-element">
+                <img src="UI設計/EnrollO/未命名-9.png" id="sequence-next-btn" class="sequence-element" alt="下一頁">
+            </div>
+        </section>
+
+        <!-- Section 5: 聊天室 -->
+        <section id="chat-page" class="page">
+             <div class="top-bar">
+                <div class="avatar-container">
+                  <img src="聊天室/阿明.PNG" alt="NPC 頭像" />
+                </div>
+                <div class="name">NPC</div>
+              </div>
+              <div class="chat-window" id="chatWindow"></div>
+              <div class="input-area">
+                <input type="text" id="messageInput" placeholder="輸入您的訊息..." />
+                <button id="sendMessageBtn" disabled>傳送</button>
+              </div>
+        </section>
+
+        <!-- Section 6: 結局 GIF 頁 -->
+        <section id="ending-gif-page" class="page">
+            <div class="ending-gif-container">
+                <img id="ending-gif" src="" alt="結局動畫">
+                <div id="ending-buttons-container" class="ending-buttons">
+                    <img src="UI設計/結尾按鈕/回首頁.PNG" id="back-to-home-btn" alt="回首頁">
+                    <img src="UI設計/結尾按鈕/進動畫.PNG" id="play-ending-video-btn" alt="進動畫">
+                     <img src="UI設計/結尾按鈕/再播一次.PNG" id="replay-ending-video-btn" alt="再播一次" style="display: none; cursor: pointer;">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 影片播放器 -->
+    <div id="video-player-1" class="video-container">
+        <video id="intro-video" playsinline>
+            <source src="ED/OP1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="video-player-ending" class="video-container">
+        <video id="ending-video" playsinline>
+            <source src="ED/結局一 新.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <audio id="cover-bgm" src="audio/cover.mp3" loop></audio>
+    <audio id="main-bgm" src="audio/main.mp3" loop></audio>
+
+    <!-- 
+      【*** 關鍵修正 ***】
+      我們在每個 script 標籤都加上 defer 屬性。
+      這會告訴瀏覽器：
+      1. 先把整個 HTML 網頁完整載入。
+      2. 然後「嚴格按照」下面的順序去執行這些 JavaScript 檔案。
+      這樣就能確保所有功能在正確的時間點被載入，徹底解決順序錯亂的問題。
+    -->
+    <script src="js/main.js" defer></script>
+    <script src="js/enroll.js" defer></script>
+    <script src="js/character-select.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/audio-control.js"></script>
+</body>
+</html>
+

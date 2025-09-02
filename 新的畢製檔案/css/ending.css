@@ -1,0 +1,50 @@
+/* ... existing code ... */
+
+#animation-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#animation-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 保持影片比例，避免裁切 */
+}
+
+#animation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* 按鈕間距 */
+    z-index: 110;
+}
+
+#animation-overlay button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#animation-overlay button img {
+    width: 150px; /* 可根據實際圖片大小調整 */
+    transition: transform 0.2s ease-in-out;
+}
+
+#animation-overlay button:hover img {
+    transform: scale(1.1);
+}
